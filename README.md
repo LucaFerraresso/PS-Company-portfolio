@@ -1,3 +1,3 @@
 # PS-Company-portfolio
 
-lucaferraresso porfolio
+lucaferraresso portfolio
