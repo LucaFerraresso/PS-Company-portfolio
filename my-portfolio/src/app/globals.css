@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-light: #f7f7f7;
+  --foreground-light: #343a40;
+  --primary-light: #0d6efd; /* Colore principale per il tema chiaro */
+  --secondary-light: #6c757d;
+  --accent-light: #198754;
+  --highlight-light: #f0ad4e; /* Colore per evidenziare elementi */
+  --muted-light: #dcdcdc; /* Colore per testi meno evidenti */
+  --surface-light: #ffffff; /* Colore di superficie per card e box */
+
+  --background-dark: #121212;
+  --foreground-dark: #e9ecef;
+  --primary-dark: #0d6efd;
+  --secondary-dark: #6c757d;
+  --accent-dark: #198754;
+  --highlight-dark: #f0ad4e;
+  --muted-dark: #707070;
+  --surface-dark: #1c1c1c; /* Colore per superfici scure */
+}
+
+body {
+  background-color: var(--background-light);
+  color: var(--foreground-light);
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark {
+  background-color: var(--background-dark);
+  color: var(--foreground-dark);
+}
+
+.navbar,
+.footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--surface-light);
+}
+
+.dark .navbar,
+.dark .footer {
+  background-color: var(--surface-dark);
+}
+
+.navbar a,
+.footer a {
+  font-weight: bold;
+  color: var(--primary-light);
+  transition: color 0.3s ease;
+}
+
+.dark .navbar a,
+.dark .footer a {
+  color: var(--primary-dark);
+}
+
+.navbar a:hover,
+.footer a:hover {
+  color: var(--accent-light);
+}
+
+.dark .navbar a:hover,
+.dark .footer a:hover {
+  color: var(--accent-dark);
+}
+
+/* Aggiungiamo qualche sfumatura e animazione */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: var(--highlight-light);
+}
+
+.dark button:hover {
+  background-color: var(--highlight-dark);
+}
+
+/* Esempio di un'animazione per i titoli */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Animazione di fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
