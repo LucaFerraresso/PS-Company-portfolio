@@ -5,30 +5,32 @@
 @tailwind utilities;
 
 :root {
+  /* Light Theme Colors */
   --background-light: #f7f7f7;
   --foreground-light: #343a40;
-  --primary-light: #0d6efd; /* Colore principale per il tema chiaro */
+  --primary-light: #0d6efd;
   --secondary-light: #6c757d;
   --accent-light: #198754;
-  --highlight-light: #f0ad4e; /* Colore per evidenziare elementi */
-  --muted-light: #dcdcdc; /* Colore per testi meno evidenti */
-  --surface-light: #ffffff; /* Colore di superficie per card e box */
 
+  /* Dark Theme Colors */
   --background-dark: #121212;
   --foreground-dark: #e9ecef;
   --primary-dark: #0d6efd;
   --secondary-dark: #6c757d;
   --accent-dark: #198754;
-  --highlight-dark: #f0ad4e;
-  --muted-dark: #707070;
-  --surface-dark: #1c1c1c; /* Colore per superfici scure */
+
+  /* Dimmed Theme Colors */
+  --background-dimmed: #2c2f33;
+  --foreground-dimmed: #99aab5;
+  --primary-dimmed: #7289da;
+  --secondary-dimmed: #aab2c0;
+  --accent-dimmed: #43b581;
 }
 
-body {
+/* Theme Classes */
+.light {
   background-color: var(--background-light);
   color: var(--foreground-light);
-  font-family: "Inter", sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dark {
@@ -36,71 +38,163 @@ body {
   color: var(--foreground-dark);
 }
 
-.navbar,
-.footer {
-  transition: background-color 0.3s ease, color 0.3s ease;
-  background-color: var(--surface-light);
+.dimmed {
+  background-color: var(--background-dimmed);
+  color: var(--foreground-dimmed);
 }
 
-.dark .navbar,
-.dark .footer {
-  background-color: var(--surface-dark);
+/* Buttons */
+.button {
+  @apply font-bold px-4 py-2 rounded transition-all duration-300 ease-in-out;
 }
-
-.navbar a,
-.footer a {
-  font-weight: bold;
-  color: var(--primary-light);
-  transition: color 0.3s ease;
+.light .button {
+  background-color: var(--primary-light);
+  color: var(--foreground-light);
 }
-
-.dark .navbar a,
-.dark .footer a {
-  color: var(--primary-dark);
+.dark .button {
+  background-color: var(--primary-dark);
+  color: var(--foreground-dark);
 }
-
-.navbar a:hover,
-.footer a:hover {
-  color: var(--accent-light);
+.dimmed .button {
+  background-color: var(--primary-dimmed);
+  color: var(--foreground-dimmed);
 }
-
-.dark .navbar a:hover,
-.dark .footer a:hover {
-  color: var(--accent-dark);
-}
-
-/* Aggiungiamo qualche sfumatura e animazione */
-button {
-  transition: all 0.3s ease;
-}
-
-button:hover {
+.button:hover {
   transform: scale(1.05);
-  background-color: var(--highlight-light);
 }
 
-.dark button:hover {
-  background-color: var(--highlight-dark);
+/* Lists */
+.list {
+  @apply space-y-2 list-disc pl-5;
+}
+.light .list {
+  color: var(--foreground-light);
+}
+.dark .list {
+  color: var(--foreground-dark);
+}
+.dimmed .list {
+  color: var(--foreground-dimmed);
 }
 
-/* Esempio di un'animazione per i titoli */
+/* Cards */
+.card {
+  @apply p-4 rounded shadow-md transition-all duration-300 ease-in-out;
+}
+.light .card {
+  background-color: var(--background-light);
+  color: var(--foreground-light);
+  border: 1px solid var(--secondary-light);
+}
+.dark .card {
+  background-color: var(--background-dark);
+  color: var(--foreground-dark);
+  border: 1px solid var(--secondary-dark);
+}
+.dimmed .card {
+  background-color: var(--background-dimmed);
+  color: var(--foreground-dimmed);
+  border: 1px solid var(--secondary-dimmed);
+}
+
+/* Navbar */
+.navbar {
+  @apply flex items-center justify-between px-6 py-4 transition-all duration-300 ease-in-out;
+}
+.light .navbar {
+  background-color: var(--primary-light);
+  color: var(--foreground-light);
+}
+.dark .navbar {
+  background-color: var(--primary-dark);
+  color: var(--foreground-dark);
+}
+.dimmed .navbar {
+  background-color: var(--primary-dimmed);
+  color: var(--foreground-dimmed);
+}
+
+/* Footer */
+.footer {
+  @apply px-6 py-4 text-center transition-all duration-300 ease-in-out;
+}
+.light .footer {
+  background-color: var(--secondary-light);
+  color: var(--foreground-light);
+}
+.dark .footer {
+  background-color: var(--secondary-dark);
+  color: var(--foreground-dark);
+}
+.dimmed .footer {
+  background-color: var(--secondary-dimmed);
+  color: var(--foreground-dimmed);
+}
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  animation: fadeIn 0.5s ease-out;
+  overflow-wrap: break-word;
 }
 
-/* Animazione di fade-in */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
 }

@@ -1,1 +1,36 @@
 {theme === "light" ? "🌞" : "🌙"}
+
+:root {
+  --background-light: #f7f7f7;
+  --foreground-light: #343a40;
+  --primary-light: #0d6efd;
+  --secondary-light: #6c757d;
+  --accent-light: #198754;
+
+  --background-dark: #121212;
+  --foreground-dark: #e9ecef;
+  --primary-dark: #0d6efd;
+  --secondary-dark: #6c757d;
+  --accent-dark: #198754;
+
+  --background-dimmed: #2c2f33;
+  --foreground-dimmed: #99aab5;
+  --primary-dimmed: #7289da;
+  --secondary-dimmed: #aab2c0;
+  --accent-dimmed: #43b581;
+}
+
+.light {
+  background-color: var(--background-light);
+  color: var(--foreground-light);
+}
+
+.dark {
+  background-color: var(--background-dark);
+  color: var(--foreground-dark);
+}
+
+.dimmed {
+  background-color: var(--background-dimmed);
+  color: var(--foreground-dimmed);
+}
