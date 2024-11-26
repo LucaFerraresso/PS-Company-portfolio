@@ -16,5 +16,8 @@ export const theme = {
       accent: "var(--accent-light)",
     },
   },
+  plugins: [
+    require("tailwind-scrollbar-hide"), // Libreria per nascondere la scrollbar
+  ],
 };
 export const plugins = [];

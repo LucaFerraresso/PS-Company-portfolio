@@ -1,33 +1,78 @@
 "use client";
 import { motion } from "framer-motion";
+import { aboutMeData } from "@/data/aboutme";
 
 const AboutMe = () => {
-  const imageUrl = "/images/personal/Luca-Ferraresso.jpg";
-  const longText = Buffer.from(
-    "Luca Ferraresso è un aspirante sviluppatore web con una solida formazione in sviluppo front-end, recentemente completata con un bootcamp intensivo. Luca padroneggia HTML, CSS, JavaScript, React e ha una conoscenza base di linguaggi back-end come Node.js e Python. Il suo percorso formativo gli ha permesso di sviluppare capacità di problem-solving, teamwork e di lavorare in modo indipendente su progetti web complessi. Luca è attualmente alla ricerca di un'opportunità come sviluppatore web per mettere in pratica le sue competenze e crescere professionalmente in un contesto stimolante."
-  ).toString("utf-8");
+  const { profileImage, name, intro, sections, closingText } = aboutMeData;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="max-w-3xl mx-auto p-6 bg-background text-foreground shadow-md rounded-lg"
+      transition={{ duration: 0.8 }}
+      className="about-me-container max-w-4xl mx-auto p-6 rounded-lg transition-colors duration-300
+        light:bg-background-light light:text-foreground-light
+        dark:bg-background-dark dark:text-foreground-dark
+        dimmed:bg-background-dimmed dimmed:text-foreground-dimmed"
     >
-      <div className="text-center">
-        <img
-          src={imageUrl}
-          alt="Foto personale"
-          className="w-40 h-40 mx-auto rounded-full shadow-lg"
+      {/* Profilo utente */}
+      <div className="profile-section text-center mb-12">
+        <h1 className="name text-3xl font-bold">{name}</h1>
+        <motion.img
+          src={profileImage}
+          alt={`Foto di ${name}`}
+          className=" mt-4 mb-4 profile-image w-40 h-40 mx-auto rounded-full shadow-xl mb-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         />
-        <h1 className="text-2xl font-bold mt-4">Chi sono</h1>
-        <p className="mt-4 text-lg">
-          Sono uno sviluppatore front-end con passione per il design, le
-          animazioni e lo sviluppo di interfacce utente responsive e
-          accessibili. Amo affrontare nuove sfide e lavorare su progetti
-          innovativi.
-          {longText}
+        <p className="intro mt-4 text-lg text-secondary max-w-3xl mx-auto">
+          {intro}
         </p>
       </div>
+
+      {/* Sezioni strutturate */}
+      <div className="structured-sections space-y-16">
+        {sections.map((section, index) => (
+          <motion.div
+            key={index}
+            className="section space-y-6"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="section-title text-2xl font-bold text-primary">
+              {section.title}
+            </h2>
+            <motion.img
+              src={section.image}
+              alt={`Immagine della sezione ${section.title}`}
+              className="section-image w-full h-64 object-cover rounded-lg shadow-md"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            />
+            <p className="section-text text-sm text-secondary">
+              {section.text}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Conclusione */}
+      <motion.div
+        className="closing-section mt-16"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="closing-title text-2xl font-bold text-primary">
+          Conclusione
+        </h2>
+        <p className="closing-text text-lg text-secondary mt-4">
+          {closingText}
+        </p>
+      </motion.div>
     </motion.div>
   );
 };

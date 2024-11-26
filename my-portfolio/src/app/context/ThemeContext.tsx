@@ -27,7 +27,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
         return storedTheme;
       }
     }
-    return "light";
+    return "dimmed";
   });
 
   useEffect(() => {

@@ -25,6 +25,64 @@
   --primary-dimmed: #7289da;
   --secondary-dimmed: #aab2c0;
   --accent-dimmed: #43b581;
+
+  /* Nuovi colori */
+  --color-orange: #f89c12; /* Orange */
+  --color-orange-dark: #fa8a00; /* Dark Orange */
+  --color-blue-light: #64b5f6; /* Light Blue */
+  --color-blue-dark: #1976d2; /* Dark Blue */
+  --color-green: #4caf50; /* Green */
+  --color-green-dark: #388e3c; /* Dark Green */
+
+  --color-red: #f44336; /* Red */
+  --color-red-dark: #d32f2f; /* Dark Red */
+  --color-purple: #9c27b0; /* Purple */
+  --color-purple-dark: #7b1fa2; /* Dark Purple */
+  --color-yellow: #ffeb3b; /* Yellow */
+  --color-yellow-dark: #fbc02d; /* Dark Yellow */
+  --color-teal: #009688; /* Teal */
+  --color-teal-dark: #00796b; /* Dark Teal */
+
+  --color-gray-light: #f5f5f5; /* Light Gray */
+  --color-gray-dark: #616161; /* Dark Gray */
+
+  /* Hover e Focus */
+  --color-hover-orange: #fb8c00; /* Dark Orange */
+  --color-hover-blue: #1976d2; /* Dark Blue */
+  --color-hover-green: #388e3c; /* Dark Green */
+  --color-hover-red: #d32f2f; /* Dark Red */
+  --color-hover-purple: #7b1fa2; /* Dark Purple */
+  --color-hover-yellow: #fbc02d; /* Dark Yellow */
+  --color-hover-teal: #00796b; /* Dark Teal */
+
+  /* Nuovi colori ricercati */
+  --color-sunset: #ff5e62; /* Un colore caldo simile al tramonto */
+  --color-sunset-dark: #e03e50; /* Ombra per il colore del tramonto */
+
+  --color-ocean: #00aaff; /* Blu oceano vibrante */
+  --color-ocean-dark: #008bb9; /* Ombra per blu oceano */
+
+  --color-lavender: #e6e6fa; /* Lavanda chiara, delicata */
+  --color-lavender-dark: #d7c9e0; /* Ombra per lavanda */
+
+  --color-emerald: #50c878; /* Verde smeraldo fresco */
+  --color-emerald-dark: #3f9f68; /* Ombra per verde smeraldo */
+
+  --color-berry: #b2006d; /* Colore bacca audace */
+  --color-berry-dark: #9b005e; /* Ombra per bacca */
+
+  --color-sapphire: #0f52ba; /* Blu zaffiro profondo */
+  --color-sapphire-dark: #0c4b99; /* Ombra per blu zaffiro */
+
+  /* Hover e Focus */
+  --color-hover-sunset: #ff7a85; /* Ombra chiara per il colore del tramonto */
+  --color-hover-ocean: #0099cc; /* Ombra chiara per blu oceano */
+  --color-hover-lavender: #d0c6e9; /* Ombra chiara per lavanda */
+  --color-hover-emerald: #3abf62; /* Ombra chiara per verde smeraldo */
+  --color-hover-berry: #b5005f; /* Ombra chiara per bacca */
+  --color-hover-sapphire: #0d4f8b; /* Ombra chiara per blu zaffiro */
+  --color-forest-green: #228b22; /* Verde foresta, tonalità più intensa per hover */
+  --color-violet: #8a2be2; /* Viola vibrante per hover */
 }
 
 /* Theme Classes */

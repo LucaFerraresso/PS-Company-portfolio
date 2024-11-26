@@ -34,3 +34,83 @@
   background-color: var(--background-dimmed);
   color: var(--foreground-dimmed);
 }
+
+"use client";
+import { motion } from "framer-motion";
+
+const AboutMe = () => {
+  const imageUrl2 = "/images/sections/img2.jpg";
+  const imageUrl3 = "/images/sections/img3.jpg";
+  const imageUrl4 = "/images/sections/img4.jpg";
+  const imageUrl5 = "/images/sections/img5.jpg";
+  const imageUrl = "/images/personal/Luca-Ferraresso.jpg"; // Immagine principale
+
+  const longText = `Ciao, sono Luca Ferraresso e lavoro come Frontend Developer da sei mesi. Anche se sono relativamente nuovo nel settore, la mia passione per la tecnologia e il design mi spinge a imparare e migliorare continuamente.`;
+  const longText2 = `Dal momento in cui ho scritto la mia prima riga di codice, sono rimasto affascinato dalla capacità della tecnologia di creare esperienze utente coinvolgenti e intuitive. Amo affrontare la sfida di trasformare idee complesse in siti web visivamente accattivanti e funzionali, che gli utenti apprezzano.`;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="max-w-4xl mx-auto p-6 shadow-lg rounded-lg transition-colors duration-300
+        light:bg-background-light light:text-foreground-light
+        dark:bg-background-dark dark:text-foreground-dark
+        dimmed:bg-background-dimmed dimmed:text-foreground-dimmed"
+    >
+      <div className="text-center mb-12">
+        <motion.img
+          src={imageUrl}
+          alt="Foto personale"
+          className="w-40 h-40 mx-auto rounded-full shadow-xl mb-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        />
+        <h1 className="text-3xl font-bold">Chi sono</h1>
+        <p className="mt-4 text-lg text-secondary max-w-3xl mx-auto">
+          Sono uno sviluppatore front-end con passione per il design, le
+          animazioni e lo sviluppo di interfacce utente responsive e
+          accessibili. Amo affrontare nuove sfide e lavorare su progetti
+          innovativi.
+        </p>
+      </div>
+
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div>
+          <img
+            src={imageUrl2}
+            alt="Progetto 1"
+            className="w-full h-64 object-cover rounded-lg shadow-md"
+          />
+          <p className="mt-4 text-sm text-secondary">{longText}</p>
+        </div>
+
+        <div>
+          <img
+            src={imageUrl3}
+            alt="Progetto 2"
+            className="w-full h-64 object-cover rounded-lg shadow-md"
+          />
+          <p className="mt-4 text-sm text-secondary">{longText2}</p>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="mt-12"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <p className="text-lg text-secondary">{longText}</p>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+export default AboutMe;
