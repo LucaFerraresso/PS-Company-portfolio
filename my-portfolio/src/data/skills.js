@@ -111,7 +111,7 @@ const skills = [
     component: <GrReactjs color={"var(--color-ocean)"} size={34} />,
     title: "React",
     description:
-      "React è una libreria JavaScript sviluppata da Facebook per creare interfacce utente interattive, particolarmente adatte per applicazioni web a pagina singola (SPA). La sua forza risiede nel modello a componenti, che permette di costruire elementi riutilizzabili e modulari, ciascuno con gestione autonoma dello stato e rendering. Grazie al Virtual DOM, React aggiorna la UI in modo efficiente, riducendo il carico sul DOM reale e migliorando le prestazioni. Con React Native, inoltre, è possibile creare applicazioni mobile usando una base di codice simile, rendendo React fondamentale per sviluppare interfacce utente performanti, scalabili e modulari.",
+      "React è una libreria JavaScript sviluppata da Facebook per creare interfacce utente interattive, particolarmente adatte per applicazioni web a pagina singola (SPA). La sua forza risiede nel modello a componenti, che permette di costruire elementi riutilizzabili e modulari, ciascuno con gestione autonoma dello stato e rendering. Grazie al Virtual DOM, React aggiorna la UI in modo efficiente, riducendo il carico sul DOM reale e migliorando le prestazioni rendendolo cosi' fondamentale per sviluppare interfacce utente performanti, scalabili e modulari.",
   },
   {
     component: <SiVuetify color={"var(--color-sunset-dark)"} size={34} />,
