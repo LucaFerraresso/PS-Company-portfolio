@@ -1,7 +1,7 @@
 "use client";
-
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image"; // Import the Image component
 
 export default function Home() {
   const imageUrl = "/images/sections/img1.jpg"; // URL dell'immagine di sfondo
@@ -19,9 +19,9 @@ export default function Home() {
       >
         <div
           className="relative min-h-screen px-8 py-16 text-center bg-cover bg-center"
-          style={{ backgroundImage: `url(${imageUrl})` }} // Applicazione dell'immagine di sfondo
+          style={{ backgroundImage: `url(${imageUrl})` }} // Apply background image for styling
         >
-          {/* Overlay con i temi */}
+          {/* Overlay with themes */}
           <div className="absolute inset-0 bg-black opacity-30 light:opacity-20 dark:opacity-50 dimmed:opacity-40"></div>
           <div className="flex flex-col justify-center items-center min-h-full relative z-10">
             <motion.div className="relative z-10 text-center">
@@ -59,10 +59,12 @@ export default function Home() {
                 transition={{ duration: 1 }}
               >
                 <Link href="/projects">
-                  <img
+                  <Image
                     src={imageUrl2}
                     alt="Progetti"
                     className="w-full h-48 object-cover"
+                    width={500} // Provide width
+                    height={200} // Provide height
                   />
                   <div className="p-4 text-center">
                     <h2 className="text-xl font-semibold text-primary">
@@ -85,10 +87,12 @@ export default function Home() {
                 transition={{ duration: 1 }}
               >
                 <Link href="/aboutme">
-                  <img
+                  <Image
                     src={imageUrl3}
                     alt="Chi Sono"
                     className="w-full h-48 object-cover"
+                    width={500}
+                    height={200}
                   />
                   <div className="p-4 text-center">
                     <h2 className="text-xl font-semibold text-primary">
@@ -111,10 +115,12 @@ export default function Home() {
                 transition={{ duration: 1 }}
               >
                 <Link href="/contacts">
-                  <img
+                  <Image
                     src={imageUrl4}
                     alt="Contatti"
                     className="w-full h-48 object-cover"
+                    width={500}
+                    height={200}
                   />
                   <div className="p-4 text-center">
                     <h2 className="text-xl font-semibold text-primary">
@@ -137,10 +143,12 @@ export default function Home() {
                 transition={{ duration: 1 }}
               >
                 <Link href="/softSkills">
-                  <img
+                  <Image
                     src={imageUrl5}
                     alt="Soft Skills"
                     className="w-full h-48 object-cover"
+                    width={500}
+                    height={200}
                   />
                   <div className="p-4 text-center">
                     <h2 className="text-xl font-semibold text-primary">
