@@ -121,7 +121,7 @@ const Contacts = () => {
             type="submit"
             className="w-full p-3 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 transition duration-300"
           >
-            Invia Messaggio
+            Iscriviti alla NewsLetter
           </button>
         </form>
         {message && (

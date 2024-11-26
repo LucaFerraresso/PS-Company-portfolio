@@ -7,10 +7,10 @@ const AboutMe = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="about-me-container max-w-4xl mx-auto p-6 rounded-lg transition-colors duration-300
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="flex flex-col text-center max-w-4xl mx-auto p-6 rounded-lg transition-colors duration-300
         light:bg-background-light light:text-foreground-light
         dark:bg-background-dark dark:text-foreground-dark
         dimmed:bg-background-dimmed dimmed:text-foreground-dimmed"
@@ -22,9 +22,6 @@ const AboutMe = () => {
           src={profileImage}
           alt={`Foto di ${name}`}
           className=" mt-4 mb-4 profile-image w-40 h-40 mx-auto rounded-full shadow-xl mb-6"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
         />
         <p className="intro mt-4 text-lg text-secondary max-w-3xl mx-auto">
           {intro}
@@ -34,13 +31,7 @@ const AboutMe = () => {
       {/* Sezioni strutturate */}
       <div className="structured-sections space-y-16">
         {sections.map((section, index) => (
-          <motion.div
-            key={index}
-            className="section space-y-6"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div key={index} className="section space-y-6">
             <h2 className="section-title text-2xl font-bold text-primary">
               {section.title}
             </h2>
@@ -48,9 +39,6 @@ const AboutMe = () => {
               src={section.image}
               alt={`Immagine della sezione ${section.title}`}
               className="section-image w-full h-64 object-cover rounded-lg shadow-md"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
             />
             <p className="section-text text-sm text-secondary">
               {section.text}
@@ -60,12 +48,7 @@ const AboutMe = () => {
       </div>
 
       {/* Conclusione */}
-      <motion.div
-        className="closing-section mt-16"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
+      <motion.div className="closing-section mt-16">
         <h2 className="closing-title text-2xl font-bold text-primary">
           Conclusione
         </h2>

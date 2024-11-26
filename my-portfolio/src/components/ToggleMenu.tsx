@@ -7,6 +7,7 @@ const ThemeToggle: React.FC = () => {
 
   return (
     <button
+      suppressHydrationWarning
       onClick={toggleTheme}
       className="bg-trasparent text-white px-4 py-2 rounded font-bold hover:border "
     >
