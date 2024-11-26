@@ -9,6 +9,13 @@ import {
   WebhookIcon,
 } from "lucide-react";
 
+// Define interface for form errors
+interface FormErrors {
+  nome: string;
+  cognome: string;
+  email: string;
+}
+
 const Contacts = () => {
   const [formData, setFormData] = useState({
     nome: "",
@@ -16,7 +23,7 @@ const Contacts = () => {
     email: "",
   });
   const [message, setMessage] = useState("");
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<FormErrors>({
     nome: "",
     cognome: "",
     email: "",
@@ -27,7 +34,12 @@ const Contacts = () => {
   };
 
   const validateForm = () => {
-    const newErrors: any = {};
+    const newErrors: FormErrors = {
+      nome: "",
+      cognome: "",
+      email: "",
+    };
+
     if (!formData.nome) newErrors.nome = "Il nome è obbligatorio";
     if (!formData.cognome) newErrors.cognome = "Il cognome è obbligatorio";
     if (!formData.email) {
@@ -35,6 +47,7 @@ const Contacts = () => {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Per favore, inserisci una email valida";
     }
+
     return newErrors;
   };
 

@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import SkillCard from "@/components/SkillCard";
 import skills from "@/data/skills";
-import { randomUUID } from "crypto";
 
 const SkillPage = () => {
   return (
